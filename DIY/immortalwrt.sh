@@ -54,6 +54,8 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-tur
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-bypass
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-passwall
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-passwall2
+git_sparse_clone master https://github.com/rmoyulong/AX6-Actions_Lede zerotier
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-zerotier
 
 git clone --depth=1 https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
 git clone --depth=1 https://github.com/Jason6111/luci-app-netdata package/luci-app-netdata

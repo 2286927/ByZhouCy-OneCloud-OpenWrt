@@ -24,8 +24,8 @@ env:
   DIY_P1_SH: DIY/immortalwrt.sh
   DIY_P2_SH: DIY/diy-part2.sh
   GEN_BURN_IMG_SH: gen_burn_img.sh
-  UPLOAD_FIRMWARE: false
-  UPLOAD_RELEASE: false
+  UPLOAD_FIRMWARE: true
+  UPLOAD_RELEASE: true
   OWRT_IP: 172.16.8.1
   OWRT_NAME: OneCloud
   TZ: Asia/Shanghai

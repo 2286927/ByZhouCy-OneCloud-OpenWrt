@@ -176,8 +176,8 @@ jobs:
     - name: Upload OpenWrt Firmware to Release
       uses: ncipollo/release-action@v1
       with:
-        name: HiWiFI4E-immortalwrt ${{ env.PRODUCT_NAME }}${{ env.DATE }}
-        tag: HiWiFI4E-immortalwrt${{ env.FILE_NAME }}
+        name: 玩客云OneCloud ${{ env.PRODUCT_NAME }}${{ env.DATE }}
+        tag: 玩客云OneCloud${{ env.FILE_NAME }}
         artifacts: ${{ env.FIRMWARE }}/*
         allowUpdates: true
         removeArtifacts: true

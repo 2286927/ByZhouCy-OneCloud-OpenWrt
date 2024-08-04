@@ -16,6 +16,11 @@ sed -i 's/\/bin\/ash/\/bin\/bash/' package/base-files/files/etc/passwd
 #sed -i 's/PKG_VERSION:=[0-9]\+\.[0-9]\+\.[0-9]\+/PKG_VERSION:=25.0.5/g' feeds/packages/utils/docker/Makefile
 #sed -i 's/PKG_VERSION:=[0-9]\+\.[0-9]\+\.[0-9]\+/PKG_VERSION:=25.0.5/g' feeds/packages/utils/dockerd/Makefile
 
+sed -i '741a\
+                <tr><td width="33%">&#32534;&#35793;&#32773;&#58;&#32;&#27954;&#183;&#67;&#121;</td><td><a href="https://github.com/2286927/ByZhouCy-OneCloud-OpenWrt" style="color: black;" target="_blank">&#32534;&#35793;&#22320;&#22336;</a></td></tr>\
+                <tr><td width="33%">&#28304;&#30721;&#58;&#32;&#108;&#101;&#100;&#101;</td><td><a href="https://github.com/coolsnowwolf/lede" style="color: black;" target="_blank">&#28304;&#30721;&#38142;&#25509;</a></td></tr>
+' package/lean/autocore/files/arm/index.htm
+
 # Modify default NTP server
 echo 'Modify default NTP server...'
 sed -i 's/ntp.aliyun.com/ntp.ntsc.ac.cn/' package/base-files/files/bin/config_generate

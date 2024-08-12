@@ -94,7 +94,7 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
-           chmod +x DIY/RollbacktoDockerVersion25.0.6.sh && bash DIY/RollbacktoDockerVersion25.0.6.sh
+           chmod +x $GITHUB_WORKSPACE/DIY/RollbacktoDockerVersion25.0.6.sh && bash DIY/RollbacktoDockerVersion25.0.6.sh
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a

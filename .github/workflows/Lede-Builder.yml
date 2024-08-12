@@ -37,7 +37,7 @@ env:
   CONFIG_FILE: Config/onecloud.config
   DIY_P1_SH: DIY/immortalwrt.sh
   DIY_P2_SH: DIY/diy-part2-lede.sh
-  DIY_P3_SH: DIY/RollbacktoDockerVersion25.0.6.sh
+  DIY_P3_SH: DIY/RollbacktoDockerVersion.sh
   GEN_BURN_IMG_SH: gen_burn_img.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true

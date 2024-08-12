@@ -86,6 +86,13 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
+    - name: 检查脚本权限&转换为Unix格式
+      run: |
+        cd ./DIY
+
+        dos2unix ./*.sh
+        chmod +x ./*.sh 
+
     - name: Load custom feeds
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default

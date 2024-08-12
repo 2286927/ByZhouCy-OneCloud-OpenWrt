@@ -37,6 +37,7 @@ env:
   CONFIG_FILE: Config/onecloud.config
   DIY_P1_SH: DIY/immortalwrt.sh
   DIY_P2_SH: DIY/diy-part2-lede.sh
+  DIY_P3_SH: DIY/RollbacktoDockerVersion25.0.6.sh
   GEN_BURN_IMG_SH: gen_burn_img.sh
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
@@ -93,8 +94,7 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
-           chmod +x $GITHUB_WORKSPACE/DIY/RollbacktoDockerVersion25.0.6.sh && bash DIY/RollbacktoDockerVersion25.0.6.sh
+      run: cd openwrt && ./scripts/feeds update -a && chmod +x $DIY_P3_SH && bash $DIY_P3_SH
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a

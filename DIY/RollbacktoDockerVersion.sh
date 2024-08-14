@@ -13,3 +13,5 @@ sed -i 's/PKG_GIT_SHORT_COMMIT:=\([[:alnum:]]\+\)/PKG_GIT_SHORT_COMMIT:=b08a51f/
 
 # containerd Has验证
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' feeds/packages/utils/containerd/Makefile
+sed -i 's/PKG_VERSION:=\([0-9]\+\.[0-9]\+\.[0-9]\+\)/PKG_VERSION:=1.7.20/g' feeds/packages/utils/containerd/Makefile
+sed -i 's/^\(PKG_HASH:=\)\([a-fA-F0-9]\{64\}\)/PKG_HASH:=c4268561e514a2e8322bc8cdd39113d5e164fb31c2cef76f479d683395ea9bd6/g' feeds/packages/utils/containerd/Makefile

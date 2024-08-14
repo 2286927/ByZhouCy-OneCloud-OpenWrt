@@ -12,4 +12,4 @@ sed -i 's/PKG_GIT_SHORT_COMMIT:=\([[:alnum:]]\+\)/PKG_GIT_SHORT_COMMIT:=b08a51f/
 #sed -i 's/^\s*$[(]call\sEnsureVendoredVersion/#&/' feeds/packages/utils/dockerd/Makefile
 
 # containerd Has验证
-sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' feeds/packages/utils/containerd/Makefile
+#sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' feeds/packages/utils/containerd/Makefile

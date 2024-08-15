@@ -43,6 +43,7 @@ env:
   UPLOAD_RELEASE: true
   OWRT_IP: 172.16.8.1
   OWRT_NAME: OneCloud
+  OWRT_FILES: onecloud/files
   TZ: Asia/Shanghai
 
 jobs:
@@ -110,6 +111,16 @@ jobs:
       run: |
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
+        
+        #设置WAN口&预设firewall
+        dos2unix $GITHUB_WORKSPACE/$OWRT_FILES/etc/rc.*
+        chmod -Rf 755 $GITHUB_WORKSPACE/$OWRT_FILES/etc/rc.*
+        #如果files文件夹不存在，创建文件夹
+          if [ ! -d "./files" ]; then
+            mkdir ./files
+          fi          
+          cp -rf $GITHUB_WORKSPACE/$OWRT_FILES/* ./files
+          
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH

@@ -1,0 +1,8 @@
+# Put your custom commands here that should be executed once
+# the system init finished. By default this file does nothing.
+mkdir -p /mnt/rax3000m
+mkdir -p /dev/shm/Shinobi/streams
+mount -a
+#mount -o remount rw /
+aria2c --conf-path=/etc/aria2/aria2.conf.main
+exit 0

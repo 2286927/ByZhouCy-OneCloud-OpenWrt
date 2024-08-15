@@ -1,0 +1,34 @@
+
+config system
+	option hostname 'OneCloud'
+	option timezone 'CST-8'
+	option zonename 'Asia/Shanghai'
+	option ttylogin '0'
+	option log_size '64'
+	option urandom_seed '0'
+	option description 'Thunder OneCloud'
+	option log_proto 'udp'
+	option conloglevel '8'
+	option cronloglevel '5'
+	option zram_comp_algo 'lzo'
+
+config timeserver 'ntp'
+	option enable_server '1'
+	list server 'ntp.tencent.com'
+	list server 'ntp1.aliyun.com'
+	list server 'ntp.ntsc.ac.cn'
+	list server 'cn.ntp.org.cn'
+
+config imm_init
+	option ipv6 '2'
+	option lang '1'
+	option system_chn '1'
+	option opkg_mirror 'https://mirrors.vsean.net/openwrt'
+	option anon_mount '1'
+
+config led
+	option name 'Blue-LED'
+	option sysfs 'blue:status'
+	option trigger 'none'
+	option default '0'
+

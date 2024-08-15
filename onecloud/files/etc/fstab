@@ -1,0 +1,7 @@
+# <file system> <mount point> <type> <options> <dump> <pass>
+# PARTUUID="00002ceb-02" /mnt/mmcblk1p2 ext4 defaults 0 0
+# UUID="c22c68fa-f8ea-48e4-b30d-0d56045f911b" /mnt/mmcblk1p2 ext4 defaults 0 0
+
+#//zyxq.thegirlisfunny.top/sda1 /mnt/sda1/mmcblk1p2/zyxq/sda1 cifs username=root,password=123450,_netdev,file_mode=0777,dir_mode=0777,iocharset=utf8 0 0
+
+//172.16.7.1/rax3000m /mnt/rax3000m cifs username=root,password=123450,_netdev,file_mode=0777,dir_mode=0777,iocharset=utf8 0 0

@@ -1,0 +1,41 @@
+
+config interface 'loopback'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+	option device 'lo'
+
+config globals 'globals'
+
+config interface 'docker'
+	option proto 'none'
+	option auto '0'
+	option device 'docker0'
+
+config device
+	option type 'bridge'
+	option name 'docker0'
+
+config device
+	option name 'br-lan'
+	option type 'bridge'
+	list ports 'eth0'
+
+config interface 'Internet'
+	option proto 'none'
+	option device 'eth0'
+
+config interface 'wan'
+	option proto 'dhcp'
+	option device '@Internet'
+
+config interface 'wan6'
+	option proto 'dhcpv6'
+	option device '@wan'
+	option reqaddress 'try'
+	option reqprefix 'auto'
+
+config device
+	option name 'eth0'
+	option macaddr '8E:D9:A5:78:99:D1'
+

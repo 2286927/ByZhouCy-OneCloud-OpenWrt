@@ -15,3 +15,7 @@ sed -i 's/PKG_GIT_SHORT_COMMIT:=\([[:alnum:]]\+\)/PKG_GIT_SHORT_COMMIT:=b08a51f/
 #sed -i 's/PKG_HASH:=.*/PKG_HASH:=skip/g' feeds/packages/utils/containerd/Makefile
 sed -i 's/PKG_VERSION:=\([0-9]\+\.[0-9]\+\.[0-9]\+\)/PKG_VERSION:=1.7.20/g' feeds/packages/utils/containerd/Makefile
 sed -i 's/^\(PKG_HASH:=\)\([a-fA-F0-9]\{64\}\)/PKG_HASH:=c4268561e514a2e8322bc8cdd39113d5e164fb31c2cef76f479d683395ea9bd6/g' feeds/packages/utils/containerd/Makefile
+
+# runc回滚1.1.12
+sed -i 's/PKG_VERSION:=\([0-9]\+\.[0-9]\+\.[0-9]\+\)/PKG_VERSION:=1.1.12/g' feeds/packages/utils/runc/Makefile
+sed -i 's/^\(PKG_HASH:=\)\([a-fA-F0-9]\{64\}\)/PKG_HASH:=be31b07d6a54a8f234016501c300ad04b6c428c56588e7eca8c3b663308db208/g' feeds/packages/utils/runc/Makefile

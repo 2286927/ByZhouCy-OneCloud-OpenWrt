@@ -80,6 +80,12 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
+    - name: 初始化变量
+      run: |
+          echo "OWRT_URL=$REPO_URL" >> $GITHUB_ENV
+          echo "OWRT_BRANCH=$REPO_BRANCH" >> $GITHUB_ENV
+          echo "OWRT_CFG=$CONFIG_FILE" >> $GITHUB_ENV
+
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -100,6 +106,13 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+ 
+    - name: 启动缓存[第二次起生效]
+      uses: rmoyulong/cachewrtbuild@main
+      with:
+        ccache: 'true'
+        prefix: ${{ github.workspace }}/openwrt
+        mixkey: ${{ env.OWRT_URL }}/tree/${{ env.OWRT_BRANCH }}?device=${{ env.OWRT_CFG }} 
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a && bash $GITHUB_WORKSPACE/$DIY_P3_SH
